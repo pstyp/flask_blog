@@ -1,10 +1,20 @@
 {% extends "layout.html" %}
+
 {% block body_content %}
-<h1>Hello, I made a change :)</h1>
+<style>
+h3 {color:red;}
+p {color:blue;} </style>
+<body style="background-color:yellow;">
+<h3>Welcome to Paul's flask blog<h3>
+<p>this is my home page</p>
 {% for post in posts %}
-{{ post.title }}<br>
+	<div>
+		<h3>{{ post.title }}</h3>
+		<p><b> - First name:</b>{{ post.author.first_name }}</p>
+		<p><b> - Last name:</b>{{ post.author.last_name }}</p>
+		<p> -- {{ post.content }}</p>
+	</div>
 {% endfor %}
-
+	
 {% endblock %}
-
 
