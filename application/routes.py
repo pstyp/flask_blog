@@ -105,3 +105,9 @@ def account_delete():
     db.session.delete(account)
     db.session.commit()
     return redirect(url_for('register'))
+
+
+
+@app.route("/coveragereport")
+def coveragereport():
+    return render_template("test_results/test-at-Jun-06-on-20-17:16.html")
